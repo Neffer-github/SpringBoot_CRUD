@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymealeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<div th:each="list : ${update}">-->
+
+<!--    <p th:text="${list.getId()}"></p>-->
+<!--    <p th:text="${list.getName()}"></p>-->
+<!--    <p th:text="${list.getEmail()}"></p>-->
+<!--</div>-->
+
+<form   th:each="list : ${update}" method="POST" th:object="${list}" >
+    Enter Name: <input type="text" th:value="${list.getName()}" name="name">
+    <br>
+    Enter Email: <input type="text" th:value="${list.getEmail()}" name="email">
+    <br>
+    <button type="submit"><em>Update Person</em></button>
+</form>
+
+</body>
+</html>
